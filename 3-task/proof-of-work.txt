@@ -1,0 +1,64 @@
+Name:             busybox
+Namespace:        s-23
+Priority:         0
+Service Account:  default
+Node:             node4/95.217.135.101
+Start Time:       Mon, 08 Jan 2024 20:09:57 +0500
+Labels:           run=busybox
+Annotations:      <none>
+Status:           Running
+IP:               10.233.65.191
+IPs:
+  IP:  10.233.65.191
+Containers:
+  busybox:
+    Container ID:  containerd://c7ae77eb1a168218f1a7334ac8fc36c91e8a8d8cb43948bbabbaa28b9a6616be
+    Image:         busybox
+    Image ID:      docker.io/library/busybox@sha256:ba76950ac9eaa407512c9d859cea48114eeff8a6f12ebaa5d32ce79d4a017dd8
+    Port:          <none>
+    Host Port:     <none>
+    Command:
+      sleep 3600
+    State:          Waiting
+      Reason:       CrashLoopBackOff
+    Last State:     Terminated
+      Reason:       StartError
+      Message:      failed to create containerd task: failed to create shim task: OCI runtime create failed: runc create failed: unable to start container process: exec: "sleep 3600": executable file not found in $PATH: unknown
+      Exit Code:    128
+      Started:      Thu, 01 Jan 1970 06:00:00 +0600
+      Finished:     Mon, 08 Jan 2024 20:15:30 +0500
+    Ready:          False
+    Restart Count:  6
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-vc4cq (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             False 
+  ContainersReady   False 
+  PodScheduled      True 
+Volumes:
+  kube-api-access-vc4cq:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type     Reason     Age                    From               Message
+  ----     ------     ----                   ----               -------
+  Normal   Scheduled  6m15s                  default-scheduler  Successfully assigned s-23/busybox to node4
+  Normal   Pulled     6m14s                  kubelet            Successfully pulled image "busybox" in 801ms (801ms including waiting)
+  Normal   Pulled     6m12s                  kubelet            Successfully pulled image "busybox" in 831ms (831ms including waiting)
+  Normal   Pulled     5m58s                  kubelet            Successfully pulled image "busybox" in 879ms (879ms including waiting)
+  Normal   Created    5m32s (x4 over 6m14s)  kubelet            Created container busybox
+  Warning  Failed     5m32s (x4 over 6m14s)  kubelet            Error: failed to create containerd task: failed to create shim task: OCI runtime create failed: runc create failed: unable to start container process: exec: "sleep 3600": executable file not found in $PATH: unknown
+  Normal   Pulled     5m32s                  kubelet            Successfully pulled image "busybox" in 880ms (880ms including waiting)
+  Normal   Pulling    4m51s (x5 over 6m15s)  kubelet            Pulling image "busybox"
+  Normal   Pulled     4m50s                  kubelet            Successfully pulled image "busybox" in 878ms (878ms including waiting)
+  Warning  BackOff    70s (x24 over 6m12s)   kubelet            Back-off restarting failed container busybox in pod busybox_s-23(1c0ea21f-39c6-4626-90a9-b107b6287204)

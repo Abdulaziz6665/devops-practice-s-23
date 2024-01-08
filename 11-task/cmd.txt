@@ -1,0 +1,1 @@
+kubectl expose deploy my-app --port=3003 --target-port=5000 --type=NodePort -n s-23

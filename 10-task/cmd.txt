@@ -1,0 +1,1 @@
+kubectl port-forward --address 127.0.0.1 pod/my-app-7f7f588464-z22mz 5000:5000 -n s-23

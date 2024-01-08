@@ -1,0 +1,3 @@
+kubectl create deploy hr-app --image nginx:1.18 --replicas 2 -n s-23
+
+kubectl get deploy hr-app -n s-23 > ./Desktop/practice/5-task/hr-app.txt

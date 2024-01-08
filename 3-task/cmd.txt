@@ -1,0 +1,3 @@
+kubectl run busybox --image busybox -n s-23 --command "sleep 3600" -o yaml > ./Desktop/practice/3-task/busybox.yaml
+
+kubectl describe pod busybox -n s-23 > ./Desktop/practice/3-task/proof-of-work.txt

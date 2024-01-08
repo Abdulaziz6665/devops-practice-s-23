@@ -1,0 +1,1 @@
+kubectl get pods -l project=practice -n s-23

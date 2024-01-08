@@ -1,0 +1,8 @@
+kubectl expose deploy my-app --port=80 --target-port=5000 --type=ClusterIP -n s-23
+
+kubectl exec nginx1 -it -n s-23 -- sh
+
+## into nginx1 pod
+curl 10.233.48.122:80/practice
+
+## output -> {"author":"devops","message":"Well DONE!"}

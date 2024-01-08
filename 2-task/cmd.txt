@@ -1,0 +1,8 @@
+kubectl run nginx1 --image nginx -n s-23
+kubectl run nginx2 --image nginx -n s-23
+
+kubectl label pod nginx1 project=practice author=Abdulaziz -n s-23 --overwrite
+kubectl label pod nginx2 project=practice author=Abdulaziz -n s-23 --overwrite
+
+kubectl get pod nginx1 -n s-23 -o yaml > ./Desktop/practice/2-task/nginx1.yaml
+kubectl get pod nginx2 -n s-23 -o yaml > ./Desktop/practice/2-task/nginx2.yaml
